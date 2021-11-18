@@ -30,7 +30,7 @@ class ContactForm extends Component {
 
     const { name } = this.state;
 
-    if (this.findByName(name) && !this.state.number) {
+    if (this.findByName(name)) {
       alert(`${name} is already in contacts!`);
       return;
     }
@@ -52,7 +52,7 @@ class ContactForm extends Component {
             type="text"
             name="name"
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            title="Имя может состоять только из букв, апострофа, тире и пробелов. "
             required
             value={this.state.name}
             onChange={this.handleChange}
